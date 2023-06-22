@@ -4,8 +4,8 @@ import express, { Request, Response,Express } from 'express';
 const app: Express = express();
 const port = process.env.PORT || 4000;
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, Express!');
+app.get('/test', (req: Request, res: Response) => {
+  res.send('Hello, Express testing!');
 }); 
 
 app.listen(port, () => {
