@@ -1,0 +1,25 @@
+# Ignore directories
+node_modules/
+dist/
+
+# Ignore specific files
+.env
+.env.*
+*.log
+
+# Ignore build artifacts
+*.js
+*.js.map
+
+# Ignore TypeScript compilation cache
+*.tsbuildinfo
+
+# Ignore package lock files
+package-lock.json
+yarn.lock
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.sublime-*
+*.swp
