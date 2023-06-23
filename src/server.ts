@@ -25,10 +25,13 @@ app.get('/test', (req: Request, res: Response) => {
   newUser.save()
   .then((savedUser: any) => {
     console.log('User saved successfully:', savedUser);
+    res.send("user created")
   })
   .catch((error: any) => {
     console.error('Failed to save user:', error);
+    res.send(JSON.stringify(error))
   });
+  
 }); 
 
 
