@@ -2,9 +2,49 @@ import express, { Request, Response } from 'express';
 import { Schema, model, Document } from 'mongoose';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt'; 
-
 import User from "../models/User";
 
+/**
+ * @swagger
+ * /register:
+ *   post:
+ *     summary: Register a new user
+ *     description: Register a new user with the provided name, number, email, and password.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               number:
+ *                 type: number
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *             required:
+ *               - name
+ *               - number
+ *               - email
+ *               - password
+ *     responses:
+ *       200:
+ *         description: User registered successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object 
+ *               properties:
+ *                 token:
+ *                   type: string
+ *       400:
+ *         description: Email is already registered
+ *       500:
+ *         description: Server Error
+ */
 export const registerUser=async (req: Request, res: Response) => {
     try {
       const { name, number, email, password } = req.body;

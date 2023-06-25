@@ -15,10 +15,12 @@ const getEnvironment = (): string => {
   return environment.toLowerCase();
 };
 
+
+
 const config = (): void => {
-  const environment = getEnvironment();
-  const path = envFiles[environment];
-  dotenv.config({ path });
-};
+    const environment = getEnvironment();
+    const envFile = envFiles[environment];
+    dotenv.config({ path: envFile });
+  };
 
 export default config;
