@@ -3,13 +3,13 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs16.x: 16
-  pre_build:
-    commands:
-      - npm ci
+      nodejs: 16
   build:
     commands:
+      - npm ci
       - npm run build
 artifacts:
   files:
-    - '**/*'
+    - 'dist/**/*'
+    - 'package.json'
+    - 'package-lock.json'
