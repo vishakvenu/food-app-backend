@@ -4,13 +4,23 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14
-
+      nodejs: 10
+    commands:
+      - npm install -g typescript
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
   build:
     commands:
-      - npm install
+      - echo Build started on `date`
       - npm run build
-
+  post_build:
+    commands:
+      - echo Build completed on `date`
 artifacts:
   files:
-    - '**/*'
+    - dist/**/*
+    - package.json
+    - package-lock.json
+    - node_modules/**/*
