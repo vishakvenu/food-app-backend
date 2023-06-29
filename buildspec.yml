@@ -25,4 +25,5 @@ artifacts:
     - package-lock.json
     - node_modules/**/*
     - appspec.yml
+    - scripts/**
   name: demo_app
