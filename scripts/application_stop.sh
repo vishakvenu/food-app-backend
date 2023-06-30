@@ -1,4 +1,5 @@
 #!/bin/bash
-#Stopping existing node servers
-echo "Stopping any existing node server"
-# pkill node
+
+# Add any application-specific start steps here
+# For example, start your Node.js application server
+npm run server
